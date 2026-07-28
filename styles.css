@@ -1,0 +1,235 @@
+* { margin: 0; padding: 0; }
+
+
+/* Google Fonts*/   
+
+/*Roboto - Google Fonts*/
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');    
+/*font-family: "Roboto", sans-serif;*/
+
+/*Lato - Google Fonts*/
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+/*font-family: "Lato", sans-serif;*/
+
+/* ============================================= */
+/* ESTILOS GENERALES (mobile-first, sin media query) */
+/* ============================================= */
+
+html, body {
+  height: 100%;
+}
+
+p{font-family: "Lato", sans-serif;
+font-size: 20;
+padding: 10px;}
+
+body {
+  background-color: #EADCC9;
+  display: flex;
+  gap: 20px;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/*color de nav bar */
+.navbar {
+  background-color: #8A9A86;
+  color: #FDFBF7;
+}
+
+/* nav simple */
+nav {
+  background-color: #8A9A86;
+  color: #FDFBF7;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+
+}
+
+/*color de links */
+nav a
+{
+  color: #FDFBF7;
+  text-decoration: none;
+  font-family: "Lato", sans-serif;
+  font-size: 15px;
+}
+
+nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  gap: 10px;
+  padding: 10px;
+  align-items: center;
+}
+
+footer {
+  background-color: #8A9A86;
+  color: #FDFBF7;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+}
+
+/*H1*/
+h1 {
+  color: #9F8170;
+  font-family: "Roboto", sans-serif;
+  font-size: 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+}
+
+/*h2*/
+h2 {
+  color: #C1694F;
+  font-family: "Lato", sans-serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  display: flex;
+  align-items: left;
+  justify-content: center;
+  padding: 5px;
+}
+
+/*intro*/
+.intro {
+  color: #1b1a1a;
+  font-family: "Lato", sans-serif;
+  font-size: 1rem;
+}
+
+.habilidades {
+  color: #1b1a1a;
+  font-family: "Lato", sans-serif;
+  padding: 10px;
+  margin: 20px;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 15px;
+}
+
+.habilidades li {
+  background-color: #8A9A86;
+  padding: 20px;
+  text-align: center;
+  list-style: none;
+  border-radius: 8px;
+  border: 2px solid #1b1a1a;
+  color:#FDFBF7;
+}
+
+.proyectos {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-areas:
+    "intro"
+    "lista";
+  gap: 20px;
+  padding: 20px;
+}
+
+.proyectos .intro {
+  grid-area: intro;
+}
+
+.proyectos .proyectos-lista {
+  grid-area: lista;
+}
+
+.proyectos-lista {
+  color: #1b1a1a;
+  font-family: "Lato", sans-serif;
+  list-style: none;
+  display: grid;
+  gap: 15px;
+}
+
+.proyectos-lista li {
+  background-color: #8A9A86;
+  color: #FDFBF7;
+  padding: 15px;
+  text-align: center;
+  border-radius: 8px;
+  border: 2px solid #1b1a1a;
+}
+
+.imagen-principal {
+  text-align: center;
+  padding: 10px;
+}
+
+.imagen-principal img {
+  width: 300px;
+  height: auto;
+  max-width: 100%;
+}
+
+main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.habilidades-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+}
+
+/* ============================================= */
+/* MEDIA QUERY TABLET (min-width: 768px)*/
+/* ============================================= */
+@media (min-width: 768px) {
+
+  .habilidades {
+    grid-template-columns: 1fr;
+  }
+
+  .proyectos-lista {
+    grid-template-columns: 1fr;
+  }
+
+  nav ul {
+    justify-content: flex-end;
+  }
+
+}
+
+/* ============================================= */
+/* MEDIA QUERY DESKTOP (min-width: 1024px)*/
+/* ============================================= */
+@media (min-width: 1024px) {
+
+  .habilidades-grid {
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 30px;
+  }
+
+  .habilidades{grid-template-columns: 1fr;}
+
+  .proyectos {
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: "intro lista";
+    align-items: center;
+    gap: 30px;
+  }
+
+  .proyectos-lista{grid-template-columns: 1fr;}
+
+  h2{justify-content: left;
+  margin-left: 5px;}
+
+  nav li{margin: 20px;}
+
+  nav img{margin:10px}
+
+}
